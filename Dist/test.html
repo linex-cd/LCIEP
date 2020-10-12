@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+</head>
+<body topmargin=80 >
+<script src="jquery-1.7.1.min.js" />
+<script>
+document.domain = '127.0.0.1';
+plugin = document.createElement("object");
+plugin.type = "application/x-npinvoker" ;
+document.documentElement.appendChild(plugin);
+
+function myopen(cmd, param, show){
+	plugin.InvokeProgram(cmd, param, show);
+
+}
+
+</script>
+<center>
+<div style="height:400px;width:360px;background-color:#AFDBCB;">
+<p><a href="hello://test">test on chrome</a></p>
+<p><a href="#" onclick="myopen('calc','',1)">open calc.exe</a></p>
+<p><a href="#" onclick="myopen('explorer','D:',1)">open disk D of my computer</a></p>
+<p><a href="#" onclick="myopen('C:/Program Files/Internet Explorer/iexplore.exe','http://www.apporto.co',1)">visit APPORTO by IE</a></p>
+<p><a href="#" onclick="myopen('C:/Program Files (x86)/Internet Explorer/iexplore.exe','http://www.apporto.co',1)">visit APPORTO by IE(X64)</a></p>
+<p><a href="#" onclick="myopen('chrome','http://www.apporto.co',1)">visit APPORTO by Chrome(only works in chrome, or you need give a full filepath of chrome.exe)</a></p>
+<p><a href="#" onclick="myopen('c:/program files/bizappcenter/bizappcenter.exe','bizappcenter://install/?package=warning&filename=winrar-x64-510.exe&interactive=off',1)">Install</a></p>
+</div>
+</center>
+</body>
+</html> 
